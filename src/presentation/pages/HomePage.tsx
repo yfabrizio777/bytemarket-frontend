@@ -1,5 +1,6 @@
 import Button from '../components/Button'
 import Container from '../components/Container'
+import { Link } from 'react-router-dom'
 import '../../styles/home.css'
 
 interface Benefit {
@@ -23,8 +24,8 @@ const benefits: readonly Benefit[] = [
 const categories: readonly FeaturedCategory[] = [
   { id: 'smartphones', name: 'Smartphones', label: 'Conecta' },
   { id: 'laptops', name: 'Laptops', label: 'Crea' },
-  { id: 'audio', name: 'Audio', label: 'Escucha' },
-  { id: 'wearables', name: 'Wearables', label: 'Muévete' },
+  { id: 'tablets', name: 'Tablets', label: 'Explora' },
+  { id: 'mobile-accessories', name: 'Accesorios', label: 'Complementa' },
 ]
 
 function HomePage() {
@@ -39,7 +40,7 @@ function HomePage() {
               Descubre dispositivos que simplifican, conectan e impulsan cada momento de tu día.
             </p>
             <div className="hero__actions">
-              <Button href="#categorias">Explorar productos</Button>
+              <Button href="/products">Explorar productos</Button>
               <Button href="#propuesta" variant="secondary">Conocer ByteMarket</Button>
             </div>
           </div>
@@ -81,14 +82,14 @@ function HomePage() {
               <p className="eyebrow">Encuentra lo tuyo</p>
               <h2 id="categories-title">Categorías destacadas</h2>
             </div>
-            <a href="#categorias">Ver todos los productos <span aria-hidden="true">→</span></a>
+            <Link to="/products">Ver todos los productos <span aria-hidden="true">→</span></Link>
           </div>
           <div className="categories__grid">
             {categories.map((category, index) => (
               <article className={`category-card category-card--${index + 1}`} id={category.id} key={category.id}>
                 <p>{category.label}</p>
                 <h3>{category.name}</h3>
-                <a href={`#${category.id}`} aria-label={`Explorar ${category.name}`}>Explorar <span aria-hidden="true">→</span></a>
+                <Link to="/products" aria-label={`Explorar ${category.name}`}>Explorar <span aria-hidden="true">→</span></Link>
                 <span className="category-card__shape" aria-hidden="true" />
               </article>
             ))}
@@ -99,10 +100,10 @@ function HomePage() {
       <section className="brand-promo section" id="propuesta" aria-labelledby="promo-title">
         <Container>
           <div className="brand-promo__content">
-            <p className="eyebrow eyebrow--light">ByteMarket selection</p>
+            <p className="eyebrow eyebrow--light">Selección ByteMarket</p>
             <h2 id="promo-title">Menos ruido. Mejor tecnología.</h2>
             <p>Una selección pensada para que elegir el dispositivo ideal sea simple, claro y emocionante.</p>
-            <Button href="#categorias" variant="secondary">Descubrir la selección</Button>
+            <Button href="/products" variant="secondary">Descubrir la selección</Button>
           </div>
         </Container>
       </section>

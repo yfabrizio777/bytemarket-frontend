@@ -79,6 +79,19 @@
   color: var(--color-primary);
 }
 
+.navbar__link--active {
+  color: var(--color-primary);
+}
+
+.navbar__link--disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.navbar__link--disabled:hover {
+  color: var(--color-text-muted);
+}
+
 .site-header__actions {
   display: flex;
   align-items: center;
@@ -97,11 +110,6 @@
   font-size: 0.86rem;
   font-weight: 650;
   text-decoration: none;
-}
-
-.header-action:hover {
-  color: var(--color-primary);
-  background-color: var(--color-primary-soft);
 }
 
 .header-action__label {
@@ -167,6 +175,11 @@
 
 .footer-links a:hover {
   color: #ffffff;
+}
+
+.footer-links span {
+  color: #747d98;
+  font-size: 0.88rem;
 }
 
 .site-footer__copyright {

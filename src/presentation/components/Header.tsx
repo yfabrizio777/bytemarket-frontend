@@ -9,15 +9,15 @@ function Header() {
         <Logo />
         <Navbar />
         <div className="site-header__actions">
-          <a className="header-action" href="#cuenta" aria-label="Acceder a mi cuenta">
-            <span aria-hidden="true">◯</span>
+          <span className="header-action" aria-label="Cuenta, próximamente">
+            <span aria-hidden="true">○</span>
             <span className="header-action__label">Cuenta</span>
-          </a>
-          <a className="header-action header-action--cart" href="#carrito" aria-label="Carrito, 0 productos">
-            <span aria-hidden="true">▱</span>
+          </span>
+          <span className="header-action header-action--cart" aria-label="Carrito, 0 productos">
+            <span aria-hidden="true">□</span>
             <span className="header-action__label">Carrito</span>
             <span className="header-action__count" aria-hidden="true">0</span>
-          </a>
+          </span>
         </div>
       </Container>
     </header>

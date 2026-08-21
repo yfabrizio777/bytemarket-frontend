@@ -1,6 +1,6 @@
 import Footer from './presentation/components/Footer'
 import Header from './presentation/components/Header'
-import HomePage from './presentation/pages/HomePage'
+import AppRoutes from './presentation/routes/AppRoutes'
 import './styles/layout.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="app-shell">
       <Header />
       <main>
-        <HomePage />
+        <AppRoutes />
       </main>
       <Footer />
     </div>

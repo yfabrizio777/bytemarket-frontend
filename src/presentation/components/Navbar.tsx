@@ -1,5 +1,7 @@
+import { NavLink } from 'react-router-dom'
+
 interface NavItem {
-  href: string
+  to?: string
   label: string
 }
 
@@ -8,9 +10,9 @@ interface NavbarProps {
 }
 
 const defaultItems: readonly NavItem[] = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#categorias', label: 'Productos' },
-  { href: '#favoritos', label: 'Favoritos' },
+  { to: '/', label: 'Inicio' },
+  { to: '/products', label: 'Productos' },
+  { label: 'Favoritos' },
 ]
 
 function Navbar({ items = defaultItems }: NavbarProps) {
@@ -19,9 +21,19 @@ function Navbar({ items = defaultItems }: NavbarProps) {
       <ul className="navbar__list">
         {items.map((item) => (
           <li key={item.label}>
-            <a className="navbar__link" href={item.href}>
-              {item.label}
-            </a>
+            {item.to ? (
+              <NavLink
+                className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`}
+                end={item.to === '/'}
+                to={item.to}
+              >
+                {item.label}
+              </NavLink>
+            ) : (
+              <span className="navbar__link navbar__link--disabled" aria-disabled="true">
+                {item.label}
+              </span>
+            )}
           </li>
         ))}
       </ul>

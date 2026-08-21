@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
+
 interface LogoProps {
-  href?: string
+  to?: string
 }
 
-function Logo({ href = '#inicio' }: LogoProps) {
+function Logo({ to = '/' }: LogoProps) {
   return (
-    <a className="logo" href={href} aria-label="ByteMarket, ir al inicio">
+    <Link className="logo" to={to} aria-label="ByteMarket, ir al inicio">
       <span className="logo__mark" aria-hidden="true">
         B
       </span>
       <span>ByteMarket</span>
-    </a>
+    </Link>
   )
 }
 
