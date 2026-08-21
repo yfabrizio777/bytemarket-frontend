@@ -112,6 +112,11 @@
   text-decoration: none;
 }
 
+a.header-action:hover {
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
 .header-action__label {
   display: none;
 }

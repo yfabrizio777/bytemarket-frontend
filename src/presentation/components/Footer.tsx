@@ -16,7 +16,7 @@ function Footer() {
             <ul className="footer-links">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/products">Productos</Link></li>
-              <li><span>Favoritos</span></li>
+              <li><Link to="/favorites">Favoritos</Link></li>
             </ul>
           </nav>
           <section>

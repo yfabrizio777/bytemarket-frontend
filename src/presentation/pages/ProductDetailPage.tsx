@@ -7,6 +7,8 @@ import ErrorState from '../components/ErrorState'
 import { useProduct } from '../hooks/useProduct'
 import { formatPrice } from '../utils/formatPrice'
 import { getCategoryLabel } from '../utils/getCategoryLabel'
+import AddToCartButton from '../components/AddToCartButton'
+import FavoriteButton from '../components/FavoriteButton'
 
 function ProductDetailPage() {
   const { id } = useParams()
@@ -112,6 +114,10 @@ function ProductDetailContent({ productId }: ProductDetailContentProps) {
               {product.brand && <div><dt>Marca</dt><dd>{product.brand}</dd></div>}
               {product.sku && <div><dt>SKU</dt><dd>{product.sku}</dd></div>}
             </dl>
+            <div className="product-detail__actions">
+              <AddToCartButton product={product} />
+              <FavoriteButton product={product} />
+            </div>
           </section>
         </div>
       </Container>

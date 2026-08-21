@@ -12,7 +12,7 @@ interface NavbarProps {
 const defaultItems: readonly NavItem[] = [
   { to: '/', label: 'Inicio' },
   { to: '/products', label: 'Productos' },
-  { label: 'Favoritos' },
+  { to: '/favorites', label: 'Favoritos' },
 ]
 
 function Navbar({ items = defaultItems }: NavbarProps) {

@@ -1,8 +1,12 @@
+import { Link } from 'react-router-dom'
+import { useCart } from '../hooks/useCart'
 import Container from './Container'
 import Logo from './Logo'
 import Navbar from './Navbar'
 
 function Header() {
+  const { totalItems } = useCart()
+
   return (
     <header className="site-header">
       <Container className="site-header__inner">
@@ -13,11 +17,15 @@ function Header() {
             <span aria-hidden="true">○</span>
             <span className="header-action__label">Cuenta</span>
           </span>
-          <span className="header-action header-action--cart" aria-label="Carrito, 0 productos">
+          <Link
+            className="header-action header-action--cart"
+            to="/cart"
+            aria-label={`Carrito, ${totalItems} ${totalItems === 1 ? 'producto' : 'productos'}`}
+          >
             <span aria-hidden="true">□</span>
             <span className="header-action__label">Carrito</span>
-            <span className="header-action__count" aria-hidden="true">0</span>
-          </span>
+            <span className="header-action__count" aria-hidden="true">{totalItems}</span>
+          </Link>
         </div>
       </Container>
     </header>
