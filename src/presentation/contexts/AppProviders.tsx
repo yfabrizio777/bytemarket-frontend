@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { CartProvider } from './CartProvider'
 import { FavoritesProvider } from './FavoritesProvider'
+import { AuthProvider } from './AuthProvider'
 
 interface AppProvidersProps {
   children: ReactNode
@@ -8,9 +9,11 @@ interface AppProvidersProps {
 
 function AppProviders({ children }: AppProvidersProps) {
   return (
-    <CartProvider>
-      <FavoritesProvider>{children}</FavoritesProvider>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <FavoritesProvider>{children}</FavoritesProvider>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 

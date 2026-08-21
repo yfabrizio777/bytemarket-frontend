@@ -5,6 +5,9 @@ import ProductDetailPage from '../pages/ProductDetailPage'
 import ProductsPage from '../pages/ProductsPage'
 import CartPage from '../pages/CartPage'
 import FavoritesPage from '../pages/FavoritesPage'
+import LoginPage from '../pages/LoginPage'
+import ProfilePage from '../pages/ProfilePage'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 function AppRoutes() {
   return (
@@ -14,6 +17,15 @@ function AppRoutes() {
       <Route path="/products/:id" element={<ProductDetailPage />} />
       <Route path="/favorites" element={<FavoritesPage />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/profile"
+        element={(
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        )}
+      />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )

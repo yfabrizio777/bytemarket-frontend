@@ -117,6 +117,27 @@ a.header-action:hover {
   background-color: var(--color-primary-soft);
 }
 
+.account-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.header-logout {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 0;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.header-logout:hover {
+  color: #934453;
+  background-color: #fbf0f2;
+}
+
 .header-action__label {
   display: none;
 }
