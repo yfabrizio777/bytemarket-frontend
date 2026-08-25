@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { formatPrice } from '../utils/formatPrice'
 
 interface CartSummaryProps {
@@ -21,14 +22,13 @@ function CartSummary({ totalItems, subtotal, onClear }: CartSummaryProps) {
         </div>
       </dl>
       <p id="checkout-notice">El envío se calculará en el checkout.</p>
-      <button
+      <Link
         className="button button--primary cart-summary__checkout"
-        type="button"
-        disabled
+        to="/checkout"
         aria-describedby="checkout-notice"
       >
-        Continuar con la compra (próximamente)
-      </button>
+        Continuar con la compra
+      </Link>
       <button className="cart-summary__clear" type="button" onClick={onClear}>
         Vaciar carrito
       </button>

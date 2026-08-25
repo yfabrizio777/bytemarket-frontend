@@ -8,6 +8,7 @@ import FavoritesPage from '../pages/FavoritesPage'
 import LoginPage from '../pages/LoginPage'
 import ProfilePage from '../pages/ProfilePage'
 import ProtectedRoute from '../components/ProtectedRoute'
+import CheckoutPage from '../pages/CheckoutPage'
 
 function AppRoutes() {
   return (
@@ -23,6 +24,14 @@ function AppRoutes() {
         element={(
           <ProtectedRoute>
             <ProfilePage />
+          </ProtectedRoute>
+        )}
+      />
+      <Route
+        path="/checkout"
+        element={(
+          <ProtectedRoute>
+            <CheckoutPage />
           </ProtectedRoute>
         )}
       />
