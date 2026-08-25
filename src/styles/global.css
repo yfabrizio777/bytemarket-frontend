@@ -146,6 +146,27 @@ a:hover {
   min-height: 100vh;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  background-color: var(--color-primary-hover);
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transform: translateY(calc(-100% - var(--space-6)));
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  color: #ffffff;
+  transform: translateY(0);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -219,8 +240,82 @@ a:hover {
   box-shadow: var(--shadow-sm);
 }
 
+.route-loading {
+  display: grid;
+  width: min(100% - 2rem, 25rem);
+  min-height: clamp(20rem, 55vh, 32rem);
+  margin-inline: auto;
+  align-content: center;
+  justify-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.route-loading__mark {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
+  font-size: 1.2rem;
+  font-weight: 850;
+  place-items: center;
+  box-shadow: 0 8px 20px rgb(89 101 184 / 22%);
+}
+
+.route-loading strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.route-loading p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.route-loading__bar {
+  position: relative;
+  width: 8rem;
+  height: 0.25rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--color-border);
+}
+
+.route-loading__bar::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  content: '';
+  transform: translateX(-100%);
+  animation: route-loading-progress 1.1s ease-in-out infinite;
+}
+
+@keyframes route-loading-progress {
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @media (min-width: 48rem) {
   .container {
     width: min(100% - 3rem, var(--container-width));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-loading__bar::after {
+    animation: none;
+    transform: none;
+  }
+
+  .skip-link {
+    transition: none;
   }
 }

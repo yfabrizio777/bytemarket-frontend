@@ -8,8 +8,9 @@ import './styles/auth.css'
 function App() {
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">Saltar al contenido principal</a>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <AppRoutes />
       </main>
       <Footer />

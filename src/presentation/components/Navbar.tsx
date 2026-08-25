@@ -7,6 +7,7 @@ interface NavItem {
 
 interface NavbarProps {
   items?: readonly NavItem[]
+  onNavigate?: () => void
 }
 
 const defaultItems: readonly NavItem[] = [
@@ -15,7 +16,7 @@ const defaultItems: readonly NavItem[] = [
   { to: '/favorites', label: 'Favoritos' },
 ]
 
-function Navbar({ items = defaultItems }: NavbarProps) {
+function Navbar({ items = defaultItems, onNavigate }: NavbarProps) {
   return (
     <nav className="navbar" aria-label="Navegación principal">
       <ul className="navbar__list">
@@ -26,6 +27,7 @@ function Navbar({ items = defaultItems }: NavbarProps) {
                 className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`}
                 end={item.to === '/'}
                 to={item.to}
+                onClick={onNavigate}
               >
                 {item.label}
               </NavLink>
