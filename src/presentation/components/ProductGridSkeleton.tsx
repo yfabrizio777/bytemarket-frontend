@@ -1,8 +1,11 @@
 import ProductCardSkeleton from './ProductCardSkeleton'
 
-const skeletonItems = [1, 2, 3, 4, 5, 6]
+interface ProductGridSkeletonProps {
+  count?: number
+}
 
-function ProductGridSkeleton() {
+function ProductGridSkeleton({ count = 6 }: ProductGridSkeletonProps) {
+  const skeletonItems = Array.from({ length: count }, (_, index) => index)
   return (
     <div className="product-grid" aria-label="Cargando productos" aria-busy="true">
       {skeletonItems.map((item) => (

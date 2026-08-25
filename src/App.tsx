@@ -1,5 +1,6 @@
 import Footer from './presentation/components/Footer'
 import Header from './presentation/components/Header'
+import BottomNavigation from './presentation/components/BottomNavigation'
 import AppRoutes from './presentation/routes/AppRoutes'
 import './styles/layout.css'
 import './styles/commerce.css'
@@ -14,6 +15,7 @@ function App() {
         <AppRoutes />
       </main>
       <Footer />
+      <BottomNavigation />
     </div>
   )
 }

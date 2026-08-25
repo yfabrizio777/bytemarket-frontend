@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import { useCart } from '../hooks/useCart'
 import Container from './Container'
+import HeaderSearch from './HeaderSearch'
 import Logo from './Logo'
 import Navbar from './Navbar'
 
@@ -23,9 +24,13 @@ function Header() {
 
   return (
     <header className="site-header">
+      <div className="announcement-bar">
+        <Container className="announcement-bar__inner">
+          <span>Envíos a todo el Perú · Compra segura y atención personalizada</span>
+          <span>ByteMarket 2026</span>
+        </Container>
+      </div>
       <Container className="site-header__inner">
-        <Logo />
-
         <button
           className="mobile-menu-toggle"
           type="button"
@@ -41,8 +46,11 @@ function Header() {
               <path d="M4 7h16M4 12h16M4 17h16" />
             )}
           </svg>
-          <span>Menú</span>
+          <span className="sr-only">Menú</span>
         </button>
+
+        <Logo />
+        <HeaderSearch />
 
         <div
           id={mobileNavigationId}
@@ -73,13 +81,13 @@ function Header() {
           <div className="desktop-account-actions">
             {isInitializing ? (
               <span className="header-action" aria-label="Verificando sesión">
-                <span aria-hidden="true">○</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5 21a7 7 0 0 1 14 0" /></svg>
                 <span className="header-action__label">Verificando...</span>
               </span>
             ) : isAuthenticated && user ? (
               <div className="account-actions">
                 <Link className="header-action" to="/profile" aria-label="Ir a mi perfil">
-                  <span aria-hidden="true">○</span>
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5 21a7 7 0 0 1 14 0" /></svg>
                   <span className="header-action__label">Hola, {user.firstName}</span>
                 </Link>
                 <button className="header-logout" type="button" onClick={logout}>
@@ -88,7 +96,7 @@ function Header() {
               </div>
             ) : (
               <Link className="header-action" to="/login">
-                <span aria-hidden="true">○</span>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5 21a7 7 0 0 1 14 0" /></svg>
                 <span className="header-action__label">Iniciar sesión</span>
               </Link>
             )}
@@ -98,7 +106,10 @@ function Header() {
             to="/cart"
             aria-label={`Carrito, ${totalItems} ${totalItems === 1 ? 'producto' : 'productos'}`}
           >
-            <span aria-hidden="true">□</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L21 8H6" />
+              <circle cx="10" cy="20" r="1" /><circle cx="18" cy="20" r="1" />
+            </svg>
             <span className="header-action__label">Carrito</span>
             <span className="header-action__count" aria-hidden="true">{totalItems}</span>
           </Link>

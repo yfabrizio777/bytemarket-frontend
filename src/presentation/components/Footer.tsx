@@ -22,10 +22,10 @@ function Footer() {
           <section>
             <h2 className="site-footer__title">Categorías</h2>
             <ul className="footer-links">
-              <li><Link to="/products">Smartphones</Link></li>
-              <li><Link to="/products">Laptops</Link></li>
-              <li><Link to="/products">Tablets</Link></li>
-              <li><Link to="/products">Accesorios móviles</Link></li>
+              <li><Link to="/products?category=smartphones">Smartphones</Link></li>
+              <li><Link to="/products?category=laptops">Laptops</Link></li>
+              <li><Link to="/products?category=tablets">Tablets</Link></li>
+              <li><Link to="/products?category=mobile-accessories">Accesorios móviles</Link></li>
             </ul>
           </section>
           <section>

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { productRepository } from '../../infrastructure/repositories/productRepository'
 import '../../styles/catalog.css'
 import Container from '../components/Container'
+import CategoryChips from '../components/CategoryChips'
 import EmptyState from '../components/EmptyState'
 import ErrorState from '../components/ErrorState'
 import FilteredEmptyState from '../components/FilteredEmptyState'
@@ -149,6 +150,7 @@ function ProductsPage() {
               onSortChange={handleSortChange}
               onClear={clearFilters}
             />
+            <CategoryChips selectedCategory={selectedCategory} onChange={handleCategoryChange} />
             <div className="catalog-results">
               <p className="catalog-results__count" aria-live="polite">{resultCountLabel}</p>
             </div>

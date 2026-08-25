@@ -19,6 +19,7 @@ function CartItemRow({ item, onQuantityChange, onRemove }: CartItemRowProps) {
         <img src={product.thumbnail} alt={product.title} />
       </Link>
       <div className="cart-item__info">
+        <p className="cart-item__brand">{product.brand ?? 'ByteMarket'}</p>
         <h2><Link to={`/products/${product.id}`}>{product.title}</Link></h2>
         <p>Precio unitario: {formatPrice(product.price)}</p>
         <button
@@ -27,7 +28,8 @@ function CartItemRow({ item, onQuantityChange, onRemove }: CartItemRowProps) {
           onClick={() => onRemove(product.id)}
           aria-label={`Eliminar ${product.title} del carrito`}
         >
-          Eliminar
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5" /></svg>
+          <span>Eliminar</span>
         </button>
       </div>
       <div className="cart-item__quantity">

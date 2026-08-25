@@ -1,16 +1,16 @@
 .checkout-page {
   min-height: 70vh;
-  padding-block: clamp(3.5rem, 8vw, 6rem);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
 }
 
 .checkout-heading {
   max-width: 42rem;
-  margin-bottom: clamp(2rem, 6vw, 4rem);
+  margin-bottom: clamp(1.75rem, 4vw, 3rem);
 }
 
 .checkout-heading h1 {
   margin-bottom: var(--space-4);
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   letter-spacing: -0.055em;
 }
 
@@ -28,8 +28,9 @@
 .checkout-summary {
   padding: clamp(1.25rem, 5vw, 2.5rem);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .checkout-form fieldset {
@@ -105,7 +106,7 @@
 
 .delivery-methods label:has(input:checked) {
   border-color: var(--color-primary);
-  background-color: var(--color-primary-soft);
+  background-color: #edf9fd;
 }
 
 .delivery-methods input {
@@ -131,10 +132,6 @@
 
 .checkout-submit {
   width: 100%;
-}
-
-.checkout-summary {
-  box-shadow: var(--shadow-sm);
 }
 
 .checkout-summary__items {
@@ -283,6 +280,6 @@
 
   .checkout-summary {
     position: sticky;
-    top: 7rem;
+    top: 9.25rem;
   }
 }

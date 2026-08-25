@@ -1,16 +1,19 @@
 :root {
-  --color-background: #f5f6fa;
+  --color-background: #f5f8fb;
   --color-surface: #ffffff;
-  --color-text: #202437;
-  --color-text-muted: #687089;
-  --color-primary: #5965b8;
-  --color-primary-hover: #48539f;
-  --color-primary-soft: #eef0fb;
-  --color-secondary: #7167a8;
-  --color-accent: #35a9b8;
-  --color-border: #dfe2eb;
-  --color-border-strong: #c8cdda;
-  --color-focus: #397fa9;
+  --color-text: #152033;
+  --color-text-muted: #667085;
+  --color-primary: #064b73;
+  --color-primary-hover: #073b5c;
+  --color-primary-soft: #dff4fc;
+  --color-secondary: #0b6f9f;
+  --color-accent: #36b6e5;
+  --color-accent-hover: #209bc9;
+  --color-border: #e1e8ef;
+  --color-border-strong: #c9d6e2;
+  --color-focus: #1683b4;
+  --color-danger: #ef3e4a;
+  --color-success: #22a35a;
 
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -18,11 +21,12 @@
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
-  --shadow-sm: 0 1px 3px rgb(31 38 71 / 8%);
-  --shadow-md: 0 12px 32px rgb(31 38 71 / 10%);
-  --shadow-lg: 0 24px 60px rgb(31 38 71 / 14%);
+  --radius-xl: 1.5rem;
+  --shadow-sm: 0 2px 8px rgb(7 59 92 / 6%);
+  --shadow-md: 0 14px 36px rgb(7 59 92 / 10%);
+  --shadow-lg: 0 28px 70px rgb(4 42 67 / 18%);
 
-  --container-width: 74rem;
+  --container-width: 80rem;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -194,7 +198,7 @@ a:hover {
 }
 
 .section {
-  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 
 .button {
@@ -220,7 +224,7 @@ a:hover {
 .button--primary {
   color: #ffffff;
   background-color: var(--color-primary);
-  box-shadow: 0 8px 20px rgb(89 101 184 / 20%);
+  box-shadow: 0 8px 20px rgb(6 75 115 / 20%);
 }
 
 .button--primary:hover {

@@ -16,8 +16,16 @@ function CartSummary({ totalItems, subtotal, onClear }: CartSummaryProps) {
           <dt>Productos</dt>
           <dd>{totalItems}</dd>
         </div>
-        <div className="cart-summary__total">
+        <div>
           <dt>Subtotal</dt>
+          <dd>{formatPrice(subtotal)}</dd>
+        </div>
+        <div>
+          <dt>Envío</dt>
+          <dd>Por confirmar</dd>
+        </div>
+        <div className="cart-summary__total">
+          <dt>Total</dt>
           <dd>{formatPrice(subtotal)}</dd>
         </div>
       </dl>
