@@ -17,29 +17,24 @@ function AppRoutes() {
   return (
     <Suspense fallback={<RouteLoadingFallback />}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<ProductDetailPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
-          path="/profile"
+          path="*"
           element={(
             <ProtectedRoute>
-              <ProfilePage />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products/:id" element={<ProductDetailPage />} />
+                <Route path="/favorites" element={<FavoritesPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
             </ProtectedRoute>
           )}
         />
-        <Route
-          path="/checkout"
-          element={(
-            <ProtectedRoute>
-              <CheckoutPage />
-            </ProtectedRoute>
-          )}
-        />
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   )
